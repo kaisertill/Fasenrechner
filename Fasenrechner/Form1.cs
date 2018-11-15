@@ -15,6 +15,7 @@ namespace Fasenrechner
         public Form1()
         {
             InitializeComponent();
+            // Hallo Armin!
         }
     }
 }
