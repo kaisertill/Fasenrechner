@@ -94,6 +94,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Rechnen";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -212,9 +213,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(490, 54);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(23, 13);
+            this.label8.Size = new System.Drawing.Size(30, 13);
             this.label8.TabIndex = 18;
-            this.label8.Text = "mm";
+            this.label8.Text = "Grad";
             // 
             // label9
             // 
@@ -230,9 +231,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(584, 50);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(23, 13);
+            this.label10.Size = new System.Drawing.Size(30, 13);
             this.label10.TabIndex = 20;
-            this.label10.Text = "mm";
+            this.label10.Text = "Grad";
             // 
             // label11
             // 
