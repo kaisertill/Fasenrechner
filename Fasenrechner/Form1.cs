@@ -45,19 +45,19 @@ namespace Fasenrechner
                 txtResWinkelAlpha.Text = Convert.ToString(angle);
                 txtRes_ZWert.Text = Convert.ToString(z);
             }
-            else if (txtWinkelAlpha.Text != "" && txt_ZWert.Text == "" && txt_XWertInc.Text == "" && txt_XWertAbs.Text != "")//Ausrechnen des Z-Werts, bei eingabe von Winkel und Xabs-Wert
+            else if (txtWinkelAlpha.Text != "" && txt_ZWert.Text == "" && txt_XWertInc.Text != "" && txt_XWertAbs.Text == "")//Ausrechnen des Z-Werts, bei eingabe von Winkel und Xinc-Wert
             {
-                z = (xinc / (Math.Tanh(angle)));
+                z = (xinc / (Math.Tan(angle)));
                 txtRes_ZWert.Text = Convert.ToString(z);
                 xabs = xinc * 2;
                 txtRes_XWertAbs.Text = Convert.ToString(xabs);
                 txtResWinkelAlpha.Text = Convert.ToString(angle);
                 txtRes_XWertInc.Text = Convert.ToString(xinc);
             }
-            else if (txtWinkelAlpha.Text != "" && txt_ZWert.Text == "" && txt_XWertInc.Text != "" && txt_XWertAbs.Text == "")//Ausrechnen des Z-Werts, bei eingabe von Winkel und Xinc-Wert
+            else if (txtWinkelAlpha.Text != "" && txt_ZWert.Text == "" && txt_XWertInc.Text == "" && txt_XWertAbs.Text != "")//Ausrechnen des Z-Werts, bei eingabe von Winkel und Xabs-Wert
             {
                 xinc = xabs / 2;
-                z = (xinc / (Math.Tanh(angle)));
+                z = (xinc / (Math.Tan(angle)));
                 txtRes_ZWert.Text = Convert.ToString(z);
                 txtRes_XWertAbs.Text = Convert.ToString(xabs);
                 txtResWinkelAlpha.Text = Convert.ToString(angle);
@@ -89,25 +89,7 @@ namespace Fasenrechner
                 txtRes_XWertInc.Text = "!!!";
             }
         }
-        private void button2_Click(object sender, EventArgs e) //Reset Knopf gedrückt
-        {
-            // Werte aus TextBoxen auslesen und in Variablen speichern
-            double winkelAlpha, zWert, xWertAbs, xWertInc;
-            winkelAlpha = Convert.ToDouble(txtWinkelAlpha.Text);
-            zWert = Convert.ToDouble(txt_ZWert.Text);
-            xWertAbs = Convert.ToDouble(txt_XWertAbs.Text);
-            xWertInc = Convert.ToDouble(txt_XWertInc.Text);
 
-            // Werte testweise in Ergebnisfelder eintragen
-            // --> Konvertierung in von Doubles Strings mittels .ToString()-Methode
-            txtResWinkelAlpha.Text = winkelAlpha.ToString();
-            txtRes_ZWert.Text = zWert.ToString();
-            txtRes_XWertAbs.Text = xWertAbs.ToString();
-            txtRes_XWertInc.Text = xWertInc.ToString();
-
-            // Ab hier können die Variablen zum Rechnen verwendet werden
-            // (Am Ende übergeben von Ergebnisse an  Ergebnis-TextBoxen)
-        }
 
         private void CmdReset_Click(object sender, EventArgs e)
         {
