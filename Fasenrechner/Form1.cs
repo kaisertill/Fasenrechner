@@ -20,6 +20,7 @@ namespace Fasenrechner
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //Alle Werte löschen..
             textBox1.Text = (null);
             textBox2.Text = (null);
             textBox3.Text = (null);
@@ -32,6 +33,7 @@ namespace Fasenrechner
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Convertieren in Dezimalzahlen zum rechnen
             double angle;
             double xabs;
             double xinc;
