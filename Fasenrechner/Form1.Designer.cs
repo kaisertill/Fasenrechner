@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtWinkelAlpha = new System.Windows.Forms.TextBox();
+            this.txt_ZWert = new System.Windows.Forms.TextBox();
+            this.txt_XWertAbs = new System.Windows.Forms.TextBox();
             this.CmdCalculate = new System.Windows.Forms.Button();
             this.CmdReset = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_XWertInc = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtResWinkelAlpha = new System.Windows.Forms.TextBox();
+            this.txtRes_ZWert = new System.Windows.Forms.TextBox();
+            this.txtRes_XWertAbs = new System.Windows.Forms.TextBox();
+            this.txtRes_XWertInc = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,29 +65,29 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txtWinkelAlpha
             // 
-            this.textBox1.Location = new System.Drawing.Point(584, 58);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(67, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtWinkelAlpha.Location = new System.Drawing.Point(584, 58);
+            this.txtWinkelAlpha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtWinkelAlpha.Name = "txtWinkelAlpha";
+            this.txtWinkelAlpha.Size = new System.Drawing.Size(67, 22);
+            this.txtWinkelAlpha.TabIndex = 1;
             // 
-            // textBox2
+            // txt_ZWert
             // 
-            this.textBox2.Location = new System.Drawing.Point(584, 90);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(67, 22);
-            this.textBox2.TabIndex = 2;
+            this.txt_ZWert.Location = new System.Drawing.Point(584, 90);
+            this.txt_ZWert.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ZWert.Name = "txt_ZWert";
+            this.txt_ZWert.Size = new System.Drawing.Size(67, 22);
+            this.txt_ZWert.TabIndex = 2;
             // 
-            // textBox3
+            // txt_XWertAbs
             // 
-            this.textBox3.Location = new System.Drawing.Point(584, 122);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(67, 22);
-            this.textBox3.TabIndex = 3;
+            this.txt_XWertAbs.Location = new System.Drawing.Point(584, 122);
+            this.txt_XWertAbs.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_XWertAbs.Name = "txt_XWertAbs";
+            this.txt_XWertAbs.Size = new System.Drawing.Size(67, 22);
+            this.txt_XWertAbs.TabIndex = 3;
             // 
             // CmdCalculate
             // 
@@ -141,13 +141,13 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "X-Wert  (abs)";
             // 
-            // textBox4
+            // txt_XWertInc
             // 
-            this.textBox4.Location = new System.Drawing.Point(584, 154);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(67, 22);
-            this.textBox4.TabIndex = 9;
+            this.txt_XWertInc.Location = new System.Drawing.Point(584, 154);
+            this.txt_XWertInc.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_XWertInc.Name = "txt_XWertInc";
+            this.txt_XWertInc.Size = new System.Drawing.Size(67, 22);
+            this.txt_XWertInc.TabIndex = 9;
             // 
             // label4
             // 
@@ -159,41 +159,41 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "X-Wert  (inc)";
             // 
-            // textBox5
+            // txtResWinkelAlpha
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(709, 58);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(67, 22);
-            this.textBox5.TabIndex = 14;
+            this.txtResWinkelAlpha.Enabled = false;
+            this.txtResWinkelAlpha.Location = new System.Drawing.Point(709, 58);
+            this.txtResWinkelAlpha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtResWinkelAlpha.Name = "txtResWinkelAlpha";
+            this.txtResWinkelAlpha.Size = new System.Drawing.Size(67, 22);
+            this.txtResWinkelAlpha.TabIndex = 14;
             // 
-            // textBox6
+            // txtRes_ZWert
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(709, 90);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(67, 22);
-            this.textBox6.TabIndex = 13;
+            this.txtRes_ZWert.Enabled = false;
+            this.txtRes_ZWert.Location = new System.Drawing.Point(709, 90);
+            this.txtRes_ZWert.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRes_ZWert.Name = "txtRes_ZWert";
+            this.txtRes_ZWert.Size = new System.Drawing.Size(67, 22);
+            this.txtRes_ZWert.TabIndex = 13;
             // 
-            // textBox7
+            // txtRes_XWertAbs
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(709, 122);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(67, 22);
-            this.textBox7.TabIndex = 12;
+            this.txtRes_XWertAbs.Enabled = false;
+            this.txtRes_XWertAbs.Location = new System.Drawing.Point(709, 122);
+            this.txtRes_XWertAbs.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRes_XWertAbs.Name = "txtRes_XWertAbs";
+            this.txtRes_XWertAbs.Size = new System.Drawing.Size(67, 22);
+            this.txtRes_XWertAbs.TabIndex = 12;
             // 
-            // textBox8
+            // txtRes_XWertInc
             // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(709, 154);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(67, 22);
-            this.textBox8.TabIndex = 11;
+            this.txtRes_XWertInc.Enabled = false;
+            this.txtRes_XWertInc.Location = new System.Drawing.Point(709, 154);
+            this.txtRes_XWertInc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRes_XWertInc.Name = "txtRes_XWertInc";
+            this.txtRes_XWertInc.Size = new System.Drawing.Size(67, 22);
+            this.txtRes_XWertInc.TabIndex = 11;
             // 
             // label5
             // 
@@ -310,20 +310,20 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.txtResWinkelAlpha);
+            this.Controls.Add(this.txtRes_ZWert);
+            this.Controls.Add(this.txtRes_XWertAbs);
+            this.Controls.Add(this.txtRes_XWertInc);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txt_XWertInc);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CmdReset);
             this.Controls.Add(this.CmdCalculate);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_XWertAbs);
+            this.Controls.Add(this.txt_ZWert);
+            this.Controls.Add(this.txtWinkelAlpha);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
@@ -337,20 +337,20 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtWinkelAlpha;
+        private System.Windows.Forms.TextBox txt_ZWert;
+        private System.Windows.Forms.TextBox txt_XWertAbs;
         private System.Windows.Forms.Button CmdCalculate;
         private System.Windows.Forms.Button CmdReset;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_XWertInc;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtResWinkelAlpha;
+        private System.Windows.Forms.TextBox txtRes_ZWert;
+        private System.Windows.Forms.TextBox txtRes_XWertAbs;
+        private System.Windows.Forms.TextBox txtRes_XWertInc;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

@@ -19,12 +19,22 @@ namespace Fasenrechner
 
         private void CmdCalculate_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "Rechnen!";
+
         }
 
         private void CmdReset_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
+            // Eingabefelder leeren (durch Übergabe eines leeren Strings)
+            txtWinkelAlpha.Text = "";
+            txt_ZWert.Text = "";
+            txt_XWertAbs.Text = "";
+            txt_XWertInc.Text = "";
+
+            // Ergebnisfelder leeren (durch Übergabe eines leeren Strings)
+            txtResWinkelAlpha.Text = "";
+            txtRes_ZWert.Text = "";
+            txtRes_XWertAbs.Text = "";
+            txtRes_XWertInc.Text = "";
         }
     }
 }
