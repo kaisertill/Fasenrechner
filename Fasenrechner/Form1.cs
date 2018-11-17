@@ -18,7 +18,7 @@ namespace Fasenrechner
         }
 
         private void CmdCalculate_Click(object sender, EventArgs e)
-        {
+        {   //Konvertieren
             double Value1;
             double Value2;
             double Value3;
