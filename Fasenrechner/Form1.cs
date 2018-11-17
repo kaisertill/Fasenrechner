@@ -15,25 +15,10 @@ namespace Fasenrechner
         public Form1()
         {
             InitializeComponent();
-            // Hallo Armin!
         }
 
-        private void button2_Click(object sender, EventArgs e) //Reset Knopf gedrückt
-        {
-            //Alle Werte löschen..
-            textBox1.Text = (null);
-            textBox2.Text = (null);
-            textBox3.Text = (null);
-            textBox4.Text = (null);
-            textBox5.Text = (null);
-            textBox6.Text = (null);
-            textBox7.Text = (null);
-            textBox8.Text = (null);
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //Convertieren in Dezimalzahlen zum rechnen
+        private void CmdCalculate_Click(object sender, EventArgs e)
+        {   //Konvertieren
             double Value1;
             double Value2;
             double Value3;
@@ -42,96 +27,84 @@ namespace Fasenrechner
             double xabs = 0;
             double xinc = 0;
             double z = 0;
-            if (Double.TryParse(textBox1.Text, out Value1))
+            if (Double.TryParse(txtWinkelAlpha.Text, out Value1))
                 angle += Value1;
-            if (Double.TryParse(textBox2.Text, out Value2))
+            if (Double.TryParse(txt_ZWert.Text, out Value2))
                 z += Value2;
-            if (Double.TryParse(textBox3.Text, out Value3))
+            if (Double.TryParse(txt_XWertAbs.Text, out Value3))
                 xabs += Value3;
-            if (Double.TryParse(textBox4.Text, out Value4))
+            if (Double.TryParse(txt_XWertInc.Text, out Value4))
                 xinc += Value4;
 
-          
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e) //Start Knopf gedrückt
-        {
-            double Value1;
-            double Value2;
-            double Value3;
-            double Value4;
-            double angle = 0;
-            double xabs = 0;
-            double xinc = 0;
-            double z = 0;
-            if (Double.TryParse(textBox1.Text, out Value1))
-                angle += Value1;
-            if (Double.TryParse(textBox2.Text, out Value2))
-                z += Value2;
-            if (Double.TryParse(textBox3.Text, out Value3))
-                xabs += Value3;
-            if (Double.TryParse(textBox4.Text, out Value4))
-                xinc += Value4;
-
-            if (textBox1.Text != (null) && textBox2.Text != (null))//Ausrechnen der X-Werte, bei eigabe von Winkel und Z-Wert
+            if (txtWinkelAlpha.Text != "" && txt_ZWert.Text != "" && txt_XWertInc.Text == "" && txt_XWertAbs.Text == "")//Ausrechnen der X-Werte, bei eigabe von Winkel und Z-Wert
             {
                 xinc = Math.Tanh(angle) * z;
-                textBox8.Text = Convert.ToString(xinc);
+                txtRes_XWertInc.Text = Convert.ToString(xinc);
                 xabs = xinc * 2;
-                textBox7.Text = Convert.ToString(xabs);
-                textBox5.Text = Convert.ToString(angle);
-                textBox6.Text = Convert.ToString(z);
+                txtRes_XWertAbs.Text = Convert.ToString(xabs);
+                txtResWinkelAlpha.Text = Convert.ToString(angle);
+                txtRes_ZWert.Text = Convert.ToString(z);
             }
-            else if (textBox1.Text != (null) && textBox3.Text !=(null))//Ausrechnen des Z-Werts, bei eingabe von Winkel und Xabs-Wert
+            else if (txtWinkelAlpha.Text != "" && txt_ZWert.Text == "" && txt_XWertInc.Text != "" && txt_XWertAbs.Text == "")//Ausrechnen des Z-Werts, bei eingabe von Winkel und Xinc-Wert
             {
-                z = (xinc / (Math.Tanh(angle)));
-                textBox6.Text = Convert.ToString(z);
+                z = (xinc / (Math.Tan(angle)));
+                txtRes_ZWert.Text = Convert.ToString(z);
                 xabs = xinc * 2;
-                textBox7.Text = Convert.ToString(xabs);
-                textBox5.Text = Convert.ToString(angle);
-                textBox8.Text = Convert.ToString(xinc);
+                txtRes_XWertAbs.Text = Convert.ToString(xabs);
+                txtResWinkelAlpha.Text = Convert.ToString(angle);
+                txtRes_XWertInc.Text = Convert.ToString(xinc);
             }
-            else if (textBox1.Text != (null) && textBox4.Text != (null))//Ausrechnen des Z-Werts, bei eingabe von Winkel und Xinc-Wert
+            else if (txtWinkelAlpha.Text != "" && txt_ZWert.Text == "" && txt_XWertInc.Text == "" && txt_XWertAbs.Text != "")//Ausrechnen des Z-Werts, bei eingabe von Winkel und Xabs-Wert
             {
                 xinc = xabs / 2;
-                z = (xinc / (Math.Tanh(angle)));
-                textBox6.Text = Convert.ToString(z);
-                textBox7.Text = Convert.ToString(xabs);
-                textBox5.Text = Convert.ToString(angle);
-                textBox8.Text = Convert.ToString(xinc);
+                z = (xinc / (Math.Tan(angle)));
+                txtRes_ZWert.Text = Convert.ToString(z);
+                txtRes_XWertAbs.Text = Convert.ToString(xabs);
+                txtResWinkelAlpha.Text = Convert.ToString(angle);
+                txtRes_XWertInc.Text = Convert.ToString(xinc);
             }
-            else if (textBox2.Text != (null) && textBox3.Text != (null))//Ausrechnen des Winkels, bei eingabe von Z-Wert und Xabs-Wert
+            else if (txtWinkelAlpha.Text == "" && txt_ZWert.Text != "" && txt_XWertInc.Text == "" && txt_XWertAbs.Text != "")// Ausrechnen des Winkels, bei eingabe von Z-Wert und Xabs-Wert
             {
                 xinc = xabs / 2;
-                angle = Math.Tan(xinc / z);
-                textBox5.Text = Convert.ToString(angle);
-                textBox6.Text = Convert.ToString(z);
-                textBox7.Text = Convert.ToString(xabs);
-                textBox8.Text = Convert.ToString(xinc);
+                angle = (Math.Atan(xinc/z) * 180 / Math.PI );
+                txtResWinkelAlpha.Text = Convert.ToString(angle);
+                txtRes_ZWert.Text = Convert.ToString(z);
+                txtRes_XWertAbs.Text = Convert.ToString(xabs);
+                txtRes_XWertInc.Text = Convert.ToString(xinc);
             }
-            else if (textBox2.Text != (null) && textBox3.Text != (null))//Ausrechnen des Winkels, bei eingabe von Z-Wert und Xinc-Wert
+            else if (txtWinkelAlpha.Text == "" && txt_ZWert.Text != "" && txt_XWertInc.Text != "" && txt_XWertAbs.Text == "")//Ausrechnen des Winkels, bei eingabe von Z-Wert und Xinc-Wert
             {
                 xabs = xinc * 2;
-                angle = Math.Tan(xinc / z);
-                textBox5.Text = Convert.ToString(angle);
-                textBox6.Text = Convert.ToString(z);
-                textBox7.Text = Convert.ToString(xabs);
-                textBox8.Text = Convert.ToString(xinc);
+                angle = Math.Atan(xinc/z) * 180 / Math.PI;
+                txtResWinkelAlpha.Text = Convert.ToString(angle);
+                txtRes_ZWert.Text = Convert.ToString(z);
+                txtRes_XWertAbs.Text = Convert.ToString(xabs);
+                txtRes_XWertInc.Text = Convert.ToString(xinc);
             }
             else
             {
-                textBox5.Text = "!!!";
-                textBox6.Text = "Synt@x";
-                textBox7.Text = "Err0r";
-                textBox8.Text = "!!!";
+                txtResWinkelAlpha.Text = "!!!";
+                txtRes_ZWert.Text = "Synt@x";
+                txtRes_XWertAbs.Text = "Err0r";
+                txtRes_XWertInc.Text = "!!!";
             }
         }
-    }
- 
 
+
+        private void CmdReset_Click(object sender, EventArgs e)
+        {
+            // Eingabefelder leeren (durch Übergabe eines leeren Strings)
+            txtWinkelAlpha.Text = "";
+            txt_ZWert.Text = "";
+            txt_XWertAbs.Text = "";
+            txt_XWertInc.Text = "";
+
+            // Ergebnisfelder leeren (durch Übergabe eines leeren Strings)
+            txtResWinkelAlpha.Text = "";
+            txtRes_ZWert.Text = "";
+            txtRes_XWertAbs.Text = "";
+            txtRes_XWertInc.Text = "";
+        }
+    }
 }
+   
