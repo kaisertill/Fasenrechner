@@ -99,6 +99,7 @@
             this.CmdCalculate.Text = "Rechnen";
             this.CmdCalculate.UseVisualStyleBackColor = true;
             this.CmdCalculate.Click += new System.EventHandler(this.CmdCalculate_Click);
+
             // 
             // CmdReset
             // 
@@ -231,9 +232,11 @@
             this.label8.Location = new System.Drawing.Point(653, 66);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(30, 17);
+
+            this.label8.Size = new System.Drawing.Size(30, 13);
+
             this.label8.TabIndex = 18;
-            this.label8.Text = "mm";
+            this.label8.Text = "Grad";
             // 
             // label9
             // 
@@ -251,9 +254,11 @@
             this.label10.Location = new System.Drawing.Point(779, 62);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(30, 17);
+
+            this.label10.Size = new System.Drawing.Size(30, 13);
+
             this.label10.TabIndex = 20;
-            this.label10.Text = "mm";
+            this.label10.Text = "Grad";
             // 
             // label11
             // 
