@@ -34,16 +34,24 @@ namespace Fasenrechner
         private void Form1_Load(object sender, EventArgs e)
         {
             //Convertieren in Dezimalzahlen zum rechnen
-            double angle;
-            double xabs;
-            double xinc;
-            double z;
-            angle = Convert.ToDouble(textBox1.Text);
-            z = Convert.ToDouble(textBox2.Text);
-            xabs = Convert.ToDouble(textBox3.Text);
-            xinc = Convert.ToDouble(textBox4.Text);
+            double Value1;
+            double Value2;
+            double Value3;
+            double Value4;
+            double angle = 0;
+            double xabs = 0;
+            double xinc = 0;
+            double z = 0;
+            if (Double.TryParse(textBox1.Text, out Value1))
+                angle += Value1;
+            if (Double.TryParse(textBox2.Text, out Value2))
+                z += Value2;
+            if (Double.TryParse(textBox3.Text, out Value3))
+                xabs += Value3;
+            if (Double.TryParse(textBox4.Text, out Value4))
+                xinc += Value4;
 
-            if(textBox1.Text != null && textBox2.Text != null) 
+            if (textBox1.Text != null && textBox2.Text != null) 
             {
 
             }
