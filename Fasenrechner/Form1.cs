@@ -27,59 +27,53 @@ namespace Fasenrechner
             double xabs = 0;
             double xinc = 0;
             double z = 0;
-            if (Double.TryParse(txtWinkelAlpha.Text, out Value1))
-                angle += Value1;
-            if (Double.TryParse(txt_ZWert.Text, out Value2))
-                z += Value2;
-            if (Double.TryParse(txt_XWertAbs.Text, out Value3))
-                xabs += Value3;
-            if (Double.TryParse(txt_XWertInc.Text, out Value4))
-                xinc += Value4;
+            double radians = 0;
 
-            if (txtWinkelAlpha.Text != "" && txt_ZWert.Text != "" && txt_XWertInc.Text == "" && txt_XWertAbs.Text == "")//Ausrechnen der X-Werte, bei eigabe von Winkel und Z-Wert
+            if (Double.TryParse(txtWinkelAlpha.Text, out Value1))
+                angle = Value1;
+            if (Double.TryParse(txt_ZWert.Text, out Value2))
+                z = Value2;
+            if (Double.TryParse(txt_XWertAbs.Text, out Value3))
+                xabs = Value3;
+            if (Double.TryParse(txt_XWertInc.Text, out Value4))
+                xinc = Value4;
+
+            if (txtWinkelAlpha.Text != "" && txt_ZWert.Text != "" && txt_XWertAbs.Text == "" && txt_XWertInc.Text == "")//Ausrechnen der X-Werte, bei eigabe von Winkel und Z-Wert
             {
-                xinc = Math.Tanh(angle) * z;
-                txtRes_XWertInc.Text = Convert.ToString(xinc);
-                xabs = xinc * 2;
-                txtRes_XWertAbs.Text = Convert.ToString(xabs);
-                txtResWinkelAlpha.Text = Convert.ToString(angle);
-                txtRes_ZWert.Text = Convert.ToString(z);
+                radians = Radians(angle);
+                xinc = Math.Tan(radians) * z;
+                Ergebnisse(xinc, angle, z);
             }
-            else if (txtWinkelAlpha.Text != "" && txt_ZWert.Text == "" && txt_XWertInc.Text != "" && txt_XWertAbs.Text == "")//Ausrechnen des Z-Werts, bei eingabe von Winkel und Xinc-Wert
+            else if (txtWinkelAlpha.Text != "" && txt_XWertInc.Text != "" && txt_ZWert.Text == "" && txt_XWertAbs.Text == "" ) //Ausrechnen des Z-Werts, bei eingabe von Winkel und Xinc-Wert
             {
-                z = (xinc / (Math.Tan(angle)));
-                txtRes_ZWert.Text = Convert.ToString(z);
-                xabs = xinc * 2;
-                txtRes_XWertAbs.Text = Convert.ToString(xabs);
-                txtResWinkelAlpha.Text = Convert.ToString(angle);
-                txtRes_XWertInc.Text = Convert.ToString(xinc);
+                radians = Radians(angle);
+                z = Z(xinc, radians) ;
+                Ergebnisse(xinc, angle, z);
             }
-            else if (txtWinkelAlpha.Text != "" && txt_ZWert.Text == "" && txt_XWertInc.Text == "" && txt_XWertAbs.Text != "")//Ausrechnen des Z-Werts, bei eingabe von Winkel und Xabs-Wert
+            else if (txtWinkelAlpha.Text != "" && txt_XWertAbs.Text != "" && txt_XWertInc.Text == "" && txt_ZWert.Text == "")//Ausrechnen des Z-Werts, bei eingabe von Winkel und Xabs-Wert
             {
-                xinc = xabs / 2;
-                z = (xinc / (Math.Tan(angle)));
-                txtRes_ZWert.Text = Convert.ToString(z);
-                txtRes_XWertAbs.Text = Convert.ToString(xabs);
-                txtResWinkelAlpha.Text = Convert.ToString(angle);
-                txtRes_XWertInc.Text = Convert.ToString(xinc);
+                xinc = Xdefinition(xabs);
+                radians = Radians(angle);
+                z = Z(xinc, radians);
+                Ergebnisse(xinc, angle, z);
             }
-            else if (txtWinkelAlpha.Text == "" && txt_ZWert.Text != "" && txt_XWertInc.Text == "" && txt_XWertAbs.Text != "")// Ausrechnen des Winkels, bei eingabe von Z-Wert und Xabs-Wert
+            else if (txt_ZWert.Text != "" && txt_XWertInc.Text != "" && txt_XWertAbs.Text == "" && txtWinkelAlpha.Text == "")//Ausrechnen des Winkels, bei eingabe von Z-Wert und Xinc-Wert
             {
-                xinc = xabs / 2;
-                angle = (Math.Atan(xinc/z) * 180 / Math.PI );
-                txtResWinkelAlpha.Text = Convert.ToString(angle);
-                txtRes_ZWert.Text = Convert.ToString(z);
-                txtRes_XWertAbs.Text = Convert.ToString(xabs);
-                txtRes_XWertInc.Text = Convert.ToString(xinc);
+                angle = Winkel(xinc, z);
+                Ergebnisse(xinc, angle, z);
             }
-            else if (txtWinkelAlpha.Text == "" && txt_ZWert.Text != "" && txt_XWertInc.Text != "" && txt_XWertAbs.Text == "")//Ausrechnen des Winkels, bei eingabe von Z-Wert und Xinc-Wert
+            else if (txt_ZWert.Text != "" && txt_XWertAbs.Text != "" && txt_XWertInc.Text == "" && txtWinkelAlpha.Text == "")//Ausrechnen des Winkels, bei eingabe von Z-Wert und Xabs-Wert
             {
-                xabs = xinc * 2;
-                angle = Math.Atan(xinc/z) * 180 / Math.PI;
-                txtResWinkelAlpha.Text = Convert.ToString(angle);
-                txtRes_ZWert.Text = Convert.ToString(z);
-                txtRes_XWertAbs.Text = Convert.ToString(xabs);
-                txtRes_XWertInc.Text = Convert.ToString(xinc);
+                xinc = Xdefinition(xabs);
+                Winkel(xinc, z);
+                Ergebnisse(xinc, angle, z);
+            }
+            else if (txt_ZWert.Text == "I" && txt_XWertAbs.Text == "L" && txt_XWertInc.Text == "L" && txtWinkelAlpha.Text == "T")
+            {
+                txtResWinkelAlpha.Text = "!!!";
+                txtRes_ZWert.Text = "h@xXx0r";
+                txtRes_XWertAbs.Text = "SkiLlZz";
+                txtRes_XWertInc.Text = "!!!";
             }
             else
             {
@@ -88,6 +82,32 @@ namespace Fasenrechner
                 txtRes_XWertAbs.Text = "Err0r";
                 txtRes_XWertInc.Text = "!!!";
             }
+            
+        }
+
+        private double Winkel(double x, double y)
+        {
+            return (Math.Atan(x / y) * 180 / Math.PI);
+        }
+        private double Xdefinition(double x)
+        {
+            return (x / 2);
+        }
+        private double Radians(double x)
+        {
+            return x * (Math.PI / 180);
+        }
+        private double Z(double x, double y)
+        {
+            return (x / (Math.Tan(y)));
+        }
+
+        private void Ergebnisse(double a, double b, double c)
+        {
+            txtRes_XWertInc.Text = Convert.ToString(a);
+            txtRes_XWertAbs.Text = Convert.ToString(a * 2);
+            txtResWinkelAlpha.Text = Convert.ToString(b);
+            txtRes_ZWert.Text = Convert.ToString(c);
         }
 
 
