@@ -29,6 +29,7 @@ namespace Fasenrechner
             double z = 0;
             double radians = 0;
 
+
             if (Double.TryParse(txtWinkelAlpha.Text, out Value1))
                 angle = Value1;
             if (Double.TryParse(txt_ZWert.Text, out Value2))
@@ -74,6 +75,7 @@ namespace Fasenrechner
                 txtRes_ZWert.Text = "h@xXx0r";
                 txtRes_XWertAbs.Text = "SkiLlZz";
                 txtRes_XWertInc.Text = "!!!";
+
             }
             else
             {
